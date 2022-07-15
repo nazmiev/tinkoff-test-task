@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Назмиев Тестовое</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+    <script src="script.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="row justify-content-center bg-light p-3">
+        <div class="col-lg-10 bg-white rounded shadow">
+            <div class="alert alert-info my-2">
+                
+                Проверить наличие программ страхования: <a href=#>ссылка</a>
+                
+            </div>
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                        type="button" role="tab" aria-controls="home-tab-pane"
+                        aria-selected="true">Представление</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="success" data-bs-toggle="tab" data-bs-target="#success-pane"
+                        type="button" role="tab" aria-controls="success-pane" aria-selected="false">
+                        Дозвон, Успешно</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="otkaz" data-bs-toggle="tab" data-bs-target="#otkaz-pane"
+                        type="button" role="tab" aria-controls="otkaz-pane" aria-selected="false">
+                        Дозвон, Отказ</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="nedozvon" data-bs-toggle="tab" data-bs-target="#nedozvon-pane"
+                        type="button" role="tab" aria-controls="nedozvon-pane"
+                        aria-selected="false">Недозвон</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="perezvon" data-bs-toggle="tab" data-bs-target="#perezvon-tab-pane"
+                        type="button" role="tab" aria-controls="perezvon-tab-pane"
+                        aria-selected="false">Перезвон</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="tab21" data-bs-toggle="tab" data-bs-target="#contact2-tab-pane"
+                        type="button" role="tab" aria-controls="contact2-tab-pane" aria-selected="false">Ошибка
+                        телефонии</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <!-- первая страница -->
+                <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+                    tabindex="0">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" width="100">Тема</th>
+                                <th scope="col">Фраза</th>
+                                <th scope="col" width="100">Ответ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-info" data-step-id="1">
+                                <td>Соединение состоялось</td>
+                                <td>Здравствуйте! Меня зовут <b role="operator">ОПЕРАТОР</b> я 
+                                    <b class="text-danger">представляю Тинькофф.</b>
+                                    Я разговариваю с <b role="client">КЛИЕНТ</b>?</td>
+                                <td>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-1" id="step-1-no"
+                                            value="no" data-tab="#nedozvon">
+                                        <label class="form-check-label text-danger" for="step-1-no">
+                                            Нет
+                                        </label>
+                                    </div>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-1" id="step-1-yes"
+                                            value="yes">
+                                        <label class="form-check-label text-success" for="step-1-yes">
+                                            Да
+                                        </label>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="d-none" data-step-id="2">
+                                <td>Уделит время?</td>
+                                <td>Очень приятно, <b role="client">КЛИЕНТ</b>.
+                                    Вы готовы уделить мне 2-3 минуты Вашего внимания и ответить на пару вопросов?
+                                </td>
+                                <td>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-2" id="step-2-no"
+                                            value="no" data-tab="#perezvon">
+                                        <label class="form-check-label text-danger" for="step-2-no">
+                                            Нет
+                                        </label>
+                                    </div>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-2" id="step-2-yes"
+                                            value="yes">
+                                        <label class="form-check-label text-success" for="step-2-yes">
+                                            Да
+                                        </label>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr class="d-none" data-step-id="3">
+                                <td>Презентация</td>
+                                <td><b role="client">КЛИЕНТ</b>, спасибо что вы являетесь нашим клиентом.
+                                    Позвольте сообщить, что мы подключаем Клиентам особую программу страхования,
+                                    которая обеспечит Вам надежную финансовую защиту при потере трудоспособности в
+                                    результате несчастного случая,
+                                    а также от потери работы.
+                                    При наступлении страхового случая по рискам «Ухода из жизни» в результате НС и
+                                    «Инвалидность 1, 2 группы» в результате НС,
+                                    размер страховой выплаты составит 160% от задолженности на дату наступления
+                                    страхового случая.<br>
+                                    <u>Например:</u> если задолженность составляла 100 000 рублей,
+                                    то страховая выплата составит 160 000 рублей.<br><br>
+
+                                    При наступлении страхового случая по риску «Потеря работы»,
+                                    задолженность в пределах 120 000 рублей будет погашена за счет страховой
+                                    компании.<br>
+                                    Скажите, вы готовы защитить себя от непредвиденных жизненных ситуаций?
+                                </td>
+                                <td>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-3" id="step-3-no"
+                                            value="no" data-tab="#otkaz">
+                                        <label class="form-check-label text-danger" for="step-3-no">
+                                            Нет
+                                        </label>
+                                    </div>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-3" id="step-3-yes"
+                                            value="yes">
+                                        <label class="form-check-label text-success" for="step-3-yes">
+                                            Да
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="d-none" data-step-id="4">
+                                <td>Стоимость</td>
+                                <td><b role="client">КЛИЕНТ</b>, плата за услугу составляет всего 0,89% от суммы
+                                    задолженности, на момент формирования счет-выписки.
+                                    Например, в случае наличия задолженности в 1000 рублей плата за программу будет
+                                    составлять всего 8 рублей 90 копеек в месяц.
+                                    При этом, в случае если задолженность отсутствует, то плата за программу не
+                                    взимается.<br>
+                                    Согласитесь, это выгодное предложение?<br><br>
+                                    <b>ВАЖНО! Если клиент не согласен по критерию цены, предагайте льготную
+                                        программу</b><br>
+                                    <b role="client">КЛИЕНТ</b>, в таком случае я могу предложить вам эту же
+                                    страховую программу,
+                                    но на льготных условиях:<br>
+                                    В течении 90 дней после подключения плата за услугу «Страхование задолженности» не
+                                    будет списываться, и Вы сможете оценить все достоинства услуги совершенно бесплатно.
+                                    В дальнейшем плата за неё составит всего 0,89% от суммы задолженности.
+                                </td>
+                                <td>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-4" id="step-4-no"
+                                            value="no" data-tab="#otkaz">
+                                        <label class="form-check-label text-danger" for="step-4-no">
+                                            Нет
+                                        </label>
+                                    </div>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-4" id="step-4-yes"
+                                            value="yes">
+                                        <label class="form-check-label text-success" for="step-4-yes">
+                                            Да
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="d-none" data-step-id="5">
+                                <td>Еще условия</td>
+                                <td>Обращаю ваше внимание на то, что участниками программы не могут быть лица, старше 75 лет и страдающие психическими заболеваниями.<br>
+                                    С этими условиями согласны?
+                                </td>
+                                <td>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-5" id="step-5-no"
+                                            value="no" data-tab="#otkaz">
+                                        <label class="form-check-label text-danger" for="step-5-no">
+                                            Нет
+                                        </label>
+                                    </div>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-5" id="step-5-yes"
+                                            value="yes">
+                                        <label class="form-check-label text-success" for="step-5-yes">
+                                            Да
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="d-none" data-step-id="6">
+                                <td>Финальный вопрос</td>
+                                <td><b>В таком случае вы будете застрахованы от рисков получения инвалидности 1,2 группы в результате НС, ухода из жизни в результате НС, а также от потери работы.
+                                    <br><span class="text-danger">Инвалидность в результате болезни в покрытие не входит.</span><br><br>
+                                    Скажите, Вы согласны стать участником этой программы?<br><br>
+                                    ВАЖНО!
+                                </b> Если клиент сообщает, что ему ранее была присвоена группа инвалидности, то необходимо пояснить,
+                                что в этом случае программа будет покрывать только риск уход из жизни в результате НС.
+                                </td>
+                                <td>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-6" id="step-6-no"
+                                            value="no" data-tab="#otkaz">
+                                        <label class="form-check-label text-danger" for="step-6-no">
+                                            Нет
+                                        </label>
+                                    </div>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-6" id="step-6-yes"
+                                            value="yes">
+                                        <label class="form-check-label text-success" for="step-6-yes">
+                                            Да
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="d-none" data-step-id="7">
+                                <td>Заключение</td>
+                                <td>Плата за страхование будет списываться с вашей карты ежемесячно.<br>
+                                    Программа начнёт действовать с момента формирования следующей счет-выписки. <br>
+                                    В случае нежелания далее получать страховую защиту, 
+                                    вы можете в любое время отключить её в мобильном приложении или в личном кабинете на сайте <a href="">www.tinkoff.ru</a>.<br>
+                                    Благодарю вас. Услуга страхования успешно подключена.<br>Всего доброго, до свидания.
+                                </td>
+                                <td>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-7" id="step-7-no"
+                                            value="no" data-tab="#otkaz">
+                                        <label class="form-check-label text-danger" for="step-7-no">
+                                            Нет
+                                        </label>
+                                    </div>
+                                    <div class="form-check m-2">
+                                        <input class="form-check-input" type="radio" name="step-7" id="step-7-yes"
+                                            value="yes" data-tab="#success">
+                                        <label class="form-check-label text-success" for="step-7-yes">
+                                            Да
+                                        </label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+                <!--Содержание второй страницы-->
+                <div class="tab-pane fade" id="success-pane" role="tabpanel" aria-labelledby="success"
+                    tabindex="0">
+                    <div class="form-check m-2">
+                        <input class="form-check-input" type="radio" name="success" id="success-1">
+                        <label class="form-check-label" for="success-1">
+                            Подключение ПЛАТНОЙ услуги
+                        </label>
+                    </div>
+                    <div class="form-check m-2">
+                        <input class="form-check-input" type="radio" name="success" id="success-2">
+                        <label class="form-check-label" for="success-2">
+                            Подключение БЕСПЛАТНОЙ услуги
+                        </label>
+                    </div>
+                    <button type="button" class="btn btn-primary mb-3 mt-2" role="finito">Завершить работу с заданием</button>
+                </div>
+                <!--Содержание третьей страницы-->
+                <div class="tab-pane fade" id="otkaz-pane" role="tabpanel" aria-labelledby="otkaz"
+                    tabindex="0">
+                    <div class="row g-2 m-2">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-1">
+                                <label class="form-check-label" for="otkaz-1">
+                                    Перезвонит самостоятельно
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-2">
+                                <label class="form-check-label" for="otkaz-2">
+                                    Не звонить
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-3">
+                                <label class="form-check-label" for="otkaz-3">
+                                    Не устраивают условия
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-4">
+                                <label class="form-check-label" for="otkaz-4">
+                                    Не устраивает цена
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-5">
+                                <label class="form-check-label" for="otkaz-5">
+                                    Уже застрахован
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-6">
+                                <label class="form-check-label" for="otkaz-6">
+                                    Не доверяет компании
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-7">
+                                <label class="form-check-label" for="otkaz-7">
+                                    Не подходит под требования программы
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-8">
+                                <label class="form-check-label" for="otkaz-8">
+                                    Отказался от услуги
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-9">
+                                <label class="form-check-label" for="otkaz-9">
+                                    Номер не принадлежит клиенту
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="otkaz"
+                                    id="otkaz-10">
+                                <label class="form-check-label" for="otkaz-10">
+                                    Другая причина
+                                </label>
+                            </div>
+                            <button type="button" class="btn btn-primary mb-3 mt-2" role="finito">Завершить работу с заданием</button>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <label class="form-label">Комментарий:</label>
+                                <textarea class="form-control" rows="3" name=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Содержание четвёртой страницы-->
+                <div class="tab-pane fade" id="nedozvon-pane" role="tabpanel" aria-labelledby="nedozvon"
+                    tabindex="0">
+                    <div class="row g-2 m-2">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="nedozvon"
+                                    id="nedozvon-1" checked>
+                                <label class="form-check-label" for="nedozvon-1">
+                                    Клиент не отвечает
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="nedozvon"
+                                    id="nedozvon-2">
+                                <label class="form-check-label" for="nedozvon-2">
+                                    Телефон не существует
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="nedozvon"
+                                    id="nedozvon-3">
+                                <label class="form-check-label" for="nedozvon-3">
+                                    Занято
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="nedozvon"
+                                    id="nedozvon-4">
+                                <label class="form-check-label" for="nedozvon-4">
+                                    Клиент сбрасывает вызов
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="nedozvon"
+                                    id="nedozvon-5">
+                                <label class="form-check-label" for="nedozvon-5">
+                                    Телефон абонента выключен
+                                </label>
+                            </div>
+                            <button type="button" class="btn btn-primary mb-3 mt-2" role="finito">Завершить работу с заданием</button>
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <label class="form-label">Комментарий:</label>
+                                <textarea class="form-control" rows="3" name=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Содержание пятой страницы-->
+                <div class="tab-pane fade" id="perezvon-tab-pane" role="tabpanel" aria-labelledby="perezvon-tab"
+                    tabindex="0">
+                    <div class="row g-2 m-2">
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="perezvon"
+                                    id="perezvon-1" checked>
+                                <label class="form-check-label" for="perezvon-1">
+                                    Звонок сорвался
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="perezvon"
+                                    id="perezvon-2">
+                                <label class="form-check-label" for="perezvon-2">
+                                    Нет требуемых данных
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="perezvon"
+                                    id="perezvon-3">
+                                <label class="form-check-label" for="perezvon-3">
+                                    По просьбе клиента/3-го лица
+                                </label>
+                            </div>
+
+                            <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Время перезвона выбрано
+                                </label>
+                            </div>
+                            <div class="col-auto">
+
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="input-group">
+                                            <div class="input-group-text"><i class="bi bi-calendar"></i></div>
+                                            <input type="datetime-local" class="form-control" name="" style="width: 10rem"
+                                                value="" />
+                                            <!-- <input type="time" class="form-control" name="" style="width: 8rem"
+                                                value="" /> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary mb-3 mt-2" role="finito">Завершить работу с заданием</button>
+
+
+
+
+
+
+                        </div>
+                        <div class="col-6">
+                            <div>
+                                <label class="form-label">Комментарий:</label>
+                                <textarea class="form-control" rows="3" name=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Содержание шестой страницы-->
+                <div class="tab-pane fade" id="contact2-tab-pane" role="tabpanel" aria-labelledby="contact2-tab"
+                    tabindex="0">
+                    <div class="col-6 mt-2">
+                        <div>
+                            <label class="form-label">Комментарий:</label>
+                            <textarea class="form-control" rows="3" name=""></textarea>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary mb-3 mt-2" role="finito">Завершить работу с заданием</button>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Привет!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body ">
+                    <div class="row g-2">
+
+                        <div>
+                            <label class="form-label">Имя оператора:</label>
+                            <input class="form-control" type="text" id="operName" name="oper" value=""
+                                placeholder="Роман" autocomplete="off" />
+                        </div>
+
+                        <div>
+                            <label class="form-label">Имя и Отчество клиента:</label>
+                            <input class="form-control" type="text" id="clientName" name="client" value=""
+                                placeholder="Андрей Игоревич" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" role="save-creds">Продолжить</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
